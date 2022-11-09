@@ -18,10 +18,10 @@ app.use(express.urlencoded({ extended: true }));
 app.get('/api', (req, res) => {
   res.send(mockResponse);
 });
-app.use('/assets', express.static(path.join(__dirname, '../src/assets')));
-app.get('*', (req, res) => {
-  return res.status(200).sendFile(HTML_FILE);
-});
+// app.use('/assets', express.static(path.join(__dirname, '../src/assets')));
+// app.get('*', (req, res) => {
+//   return res.status(200).sendFile(HTML_FILE);
+// });
 app.use((err, req, res, next) => {
   const defaultErr = {
     log: 'Express error handler caught unknown middleware error',
